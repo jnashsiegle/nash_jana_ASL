@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -36,9 +34,16 @@ Route::group(['middleware' => 'web'], function () {
     //return view('greeting', ['name' => 'James']);
 
 
-    Route::get('/redirect', 'SocialAuthController@redirectToProvider');
-    Route::get('/callback', 'SocialAuthController@handleProviderCallback');
+    //facebook 
+    Route::get('/home', array('as' => 'home', 'uses' => function(){
+  		return view('home');
+}));
+
+
+});
+    //Route::get('/redirect', 'SocialAuthController@redirectToProvider');
+    //Route::get('auth/callback', 'SocialAuthController@handleProviderCallback');
 
     //Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 	//Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
-});
+//});
