@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-       use App\Http\Requests;
-       use App\Http\Controllers\Controller;
-       use Illuminate\Foundation\Auth\ThrottlesLogins;
-       use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-       use Illuminate\Foundation\Validation\ValidatesRequests;
+use Validator;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
-       use App\User;
-       use Validator;
+use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\auth;
+use App\User;  
 
 
-use Socialite;
-use Auth;
+
+
 Use redirect;
 
 class SocialAuthController extends Controller
@@ -26,7 +27,8 @@ class SocialAuthController extends Controller
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->redirect('');
+        return Socialite::driver('facebook')
+        ->scopes(['email'])->redirect();
     }
 
     /**

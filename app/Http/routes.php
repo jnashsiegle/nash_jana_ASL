@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -30,6 +32,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    //Route::get('/home', function ()    {
+    //return view('greeting', ['name' => 'James']);
+
 
     Route::get('/redirect', 'SocialAuthController@redirectToProvider');
     Route::get('/callback', 'SocialAuthController@handleProviderCallback');

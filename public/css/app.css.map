@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/welcome.scss","app.scss"],"names":[],"mappings":"AAAA;EACC,WAAW,EACX;;ACDD;EACC,wBAAwB,EACxB","file":"app.css","sourcesContent":[".welcome {\n\tcolor: red;\n}\n","@import 'pages/welcome';\nbody{\n\tbackground-color: black;\n}\n"],"sourceRoot":"/source/"}
