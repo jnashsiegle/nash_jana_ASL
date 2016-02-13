@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> origin/master
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -33,8 +36,28 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+<<<<<<< HEAD
     
 
     Route::get('/redirect', 'SocialAuthController@redirect');
 	Route::get('/callback', 'SocialAuthController@callback');
 });
+=======
+    //Route::get('/home', function ()    {
+    //return view('greeting', ['name' => 'James']);
+
+
+    //facebook 
+    Route::get('/home', array('as' => 'home', 'uses' => function(){
+  		return view('home');
+}));
+
+
+});
+    //Route::get('/redirect', 'SocialAuthController@redirectToProvider');
+    //Route::get('auth/callback', 'SocialAuthController@handleProviderCallback');
+
+    //Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+	//Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+//});
+>>>>>>> origin/master

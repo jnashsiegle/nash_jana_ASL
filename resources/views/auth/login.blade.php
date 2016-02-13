@@ -56,7 +56,12 @@
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                                 <!--facebook login -->
+<<<<<<< HEAD
                                 <a href="redirect">FB Login</a>
+=======
+                                <!-- <a href = "redirect">FB Login</a> -->
+                                <a class = "btn btn-info" href = "auth/facebook" role = "button">Login with Facebook</a>
+>>>>>>> origin/master
                             </div>
                         </div>
                     </form>
