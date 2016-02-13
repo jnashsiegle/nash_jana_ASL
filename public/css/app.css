@@ -1,9 +1,19 @@
 html,body{ 
 	margin:0; 
-	padding:0; 
+	padding:0;
+  background-color: #BFC1B2; 
 	height:100%; 
 	width:100%;
 	overflow:hidden; 
+}
+.navbar, .panel-default>.panel-heading, .dropdown-toggle{
+  background-color: #5E4A4A;
+}
+.navbar-default .navbar-nav>li>a, .navbar>.container .navbar-brand, .panel-default>.panel-heading {
+  color: white;
+}
+.panel-body, .navbar-right, li.dropdown.open, li.dropdown.open a, ul.dropdown-menu{
+  background-color: #cccc99;
 }
 .welcome {
 	height: 100%;
