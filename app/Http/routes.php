@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -32,13 +33,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
-    //Route::get('/home', function ()    {
-    //return view('greeting', ['name' => 'James']);
+    
 
-
-    Route::get('/redirect', 'SocialAuthController@redirectToProvider');
-    Route::get('/callback', 'SocialAuthController@handleProviderCallback');
-
-    //Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-	//Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+    Route::get('/redirect', 'SocialAuthController@redirect');
+	Route::get('/callback', 'SocialAuthController@callback');
 });

@@ -11,7 +11,7 @@
                 @if(Auth::check())
                 <?php $user = Auth::user(); ?>
                 @endif
-                    You are logged in as {{ Auth::user()->email }}.
+                    <h4>Welcome {{ Auth::user()->name }}, your listed email is {{ Auth::user()->email }}.
                 </div>
             </div>
         </div>

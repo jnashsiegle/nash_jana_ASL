@@ -36,9 +36,9 @@ return [
     ],
 
     'facebook' => [
-    'client_id' => env('FACEBOOK_ID'),
-    'client_secret' => env('FACEBOOK_SECRET'),
-    'redirect' => env('FACEBOOK_URL'),
+    'client_id' => '1578152272509933',
+    'client_secret' => 'bd603d46659efb0e59999d490bac49aa',
+    'redirect' => 'http://localhost:8888/nash_jana_ASL/public/callback',
 ],
 
     

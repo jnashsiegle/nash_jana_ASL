@@ -2,45 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Validator;
+use Illuminate\Http\Request;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-
-use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\auth;
-use App\User;  
-
-
-
-
-Use redirect;
+use App\SocialAccountService;
+use Socialite;
 
 class SocialAuthController extends Controller
 {
-    /**
-     * Redirect the user to the facebook authentication page.
-     *
-     * @return Response
-     */
-    public function redirectToProvider()
+    public function redirect()
     {
-        return Socialite::driver('facebook')
-        ->scopes(['email'])->redirect();
-    }
+        return Socialite::driver('facebook')->redirect();   
+    }   
 
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return Response
-     */
-    public function handleProviderCallback()
+    public function callback(SocialAccountService $service)
     {
-        $user = Socialite::driver('facebook')->user();
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 
-        // $user->token;
-         //return redirect();
+        auth()->login($user);
+
+        return redirect()->to('/home');
     }
 }
