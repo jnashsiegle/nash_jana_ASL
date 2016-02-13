@@ -73,7 +73,10 @@
                                     <i class="fa fa-btn fa-user"></i>Register
                                 </button>
                             </div>
+                            <!--facebook login -->
+                        <a href="redirect">Use Facebook Login</a>
                         </div>
+                        
                     </form>
                 </div>
             </div>

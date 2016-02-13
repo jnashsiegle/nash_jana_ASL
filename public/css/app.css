@@ -15,6 +15,9 @@ html,body{
 .panel-body, .navbar-right, li.dropdown.open, li.dropdown.open a, ul.dropdown-menu{
   background-color: #cccc99;
 }
+.redirect{
+  margin-left: 50px;
+}
 .welcome {
 	height: 100%;
 	overflow: hidden;
