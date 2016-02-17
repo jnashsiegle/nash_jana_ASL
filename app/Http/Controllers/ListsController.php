@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Lists;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Html;
+use Session;
+use View;
+
 
 class ListsController extends Controller
 {
@@ -25,7 +29,10 @@ class ListsController extends Controller
      */
     public function index()
     {
-        return view('lists/index');
+        $lists = Lists::all();
+
+        return view('lists.index')->withLists($lists);
+        
     }  
 
 
@@ -45,7 +52,7 @@ class ListsController extends Controller
      */
     public function create()
     {
-        //
+        return view('lists.create');
     }
 
     /**
@@ -56,7 +63,19 @@ class ListsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required'
+            ]);
+
+            $input = $request->all();
+
+            Lists::create($input);
+
+            Session::flash('flash_message', 'List successfully added!');
+
+            return redirect()->back();
+        
     }
 
     /**
@@ -67,7 +86,12 @@ class ListsController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $list = Lists::find($id);
+        $list = Lists::findOrFail($id);
+
+        return view('lists.show', compact('list'));
+
     }
 
     /**
@@ -78,7 +102,7 @@ class ListsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('lists.edit');
     }
 
     /**

@@ -4,7 +4,7 @@ html,body{
   background-color: #BFC1B2; 
 	height:100%; 
 	width:100%;
-	overflow:hidden; 
+	overflow:auto; 
 }
 .navbar, .panel-default>.panel-heading, .dropdown-toggle{
   background-color: #5E4A4A;

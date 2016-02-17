@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 
 Route::get('/', 'ListsController@index');
+Route::get('lists/create', 'ListsController@create');
+Route::get('lists/{id}', 'ListsController@show');
+
+
 
 });
 
@@ -42,4 +46,7 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/callback', 'SocialAuthController@callback');
 
 	Route::resource('lists', 'ListsController');
+	Route::get('lists/{id}', 'ListsController@show');
+
+
 });

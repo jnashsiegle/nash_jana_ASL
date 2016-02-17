@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Lists extends Model
 {
    protected $fillable = [
+   		'title',
    		'description',
-   		'added_on',
    		
+   	];
 }
