@@ -90,7 +90,8 @@ class ListsController extends Controller
         $list = Lists::find($id);
         $list = Lists::findOrFail($id);
 
-        return view('lists.show', compact('list'));
+        return view('lists.show')->withList($list);
+        //return view('lists.show', compact('list'));
 
     }
 
