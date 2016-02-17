@@ -12,7 +12,7 @@ return array(
      |
      */
 
-    'enabled' => null,
+    'enabled' => false,
 
     /*
      |--------------------------------------------------------------------------
@@ -82,12 +82,12 @@ return array(
      */
 
     'collectors' => array(
-        'phpinfo'         => true,  // Php version
+        'phpinfo'         => false,  // Php version
         'messages'        => true,  // Messages
-        'time'            => true,  // Time Datalogger
-        'memory'          => true,  // Memory usage
-        'exceptions'      => true,  // Exception displayer
-        'log'             => true,  // Logs from Monolog (merged in messages if enabled)
+        'time'            => false,  // Time Datalogger
+        'memory'          => false,  // Memory usage
+        'exceptions'      => false,  // Exception displayer
+        'log'             => false,  // Logs from Monolog (merged in messages if enabled)
         'db'              => true,  // Show database (PDO) queries and bindings
         'views'           => true,  // Views with their data
         'route'           => true,  // Current route information
@@ -97,11 +97,11 @@ return array(
         'symfony_request' => true,  // Only one can be enabled..
         'mail'            => false,  // Catch mail messages
         'logs'            => false, // Add the latest log messages
-        'files'           => true, // Show the included files
-        'config'          => true, // Display config settings
+        'files'           => false, // Show the included files
+        'config'          => false, // Display config settings
         'auth'            => true, // Display Laravel authentication status
         'gate'            => false, // Display Laravel Gate checks
-        'session'         => true,  // Display session data
+        'session'         => false,  // Display session data
     ),
 
     /*

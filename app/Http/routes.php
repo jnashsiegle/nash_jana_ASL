@@ -13,6 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
+
+Route::get('/', 'ListsController@index');
+
 });
 
 
@@ -37,4 +40,6 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/redirect', 'SocialAuthController@redirect');
 	Route::get('/callback', 'SocialAuthController@callback');
+
+	Route::resource('lists', 'ListsController');
 });
