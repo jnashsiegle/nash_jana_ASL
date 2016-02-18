@@ -48,5 +48,6 @@ Route::group(['middleware' => 'web'], function () {
 	Route::resource('lists', 'ListsController');
 	Route::get('lists/{id}', 'ListsController@show');
 
+	Route::post('upload', 'UploadController@upload');
 
 });

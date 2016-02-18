@@ -65,7 +65,8 @@ class ListsController extends Controller
     {
             $this->validate($request, [
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'shoppingDate' => 'required'
             ]);
 
             $input = $request->all();
@@ -121,7 +122,8 @@ class ListsController extends Controller
 
         $this->validate($request, [
             'title'=> 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'shoppingDate' =>'required'
         ]);
 
         $input = $request->all();

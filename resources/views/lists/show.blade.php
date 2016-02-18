@@ -9,7 +9,8 @@
                 <div class="panel-heading">It's Shopping Day!</div>
                 <div class="panel-body">
 					<h1>{{$list->title}}</h1>
-					<p class="lead">{{ $list->description }}</p>
+					<p>{{$list->shopping_date}}</p>
+					<p class="lead list">{{ $list->description }}</p>
 
 					
 					<a href="{{ route('lists.edit', $list->id) }}" class="btn btn-primary pull-left">Edit List</a>

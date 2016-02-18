@@ -14,10 +14,10 @@ class CreateListsTable extends Migration
     {
         Schema::create('lists', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->string('user_id')->nullable();
             $table->string('title');
             $table->longtext('description');
-            $table->date('shopping date');
+            $table->date('shoppingDate');
             $table->timestamps();
         });
     }

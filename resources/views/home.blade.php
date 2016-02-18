@@ -10,12 +10,19 @@
                 @if(Auth::check())
                 <?php $user = Auth::user(); ?>
                 @endif
-
-                    <h4>Welcome {{ Auth::user()->name }}, your listed email is {{ Auth::user()->email }}.
+                    
+                    <h4>Welcome {{ Auth::user()->name }}, your listed email is {{ Auth::user()->email }}.</h4>
                     <hr />
-                    <p>What would you like to do today &quest;</p>
-                    <p><a href = "{{ url('lists') }}"">Create a new shopping list.</a></p>
+                    <table class = "profile">
+                    <tr>
+                    <td>
+                    <p class = "inline">What would you like to do today &quest;</p>
+                    <p><a href = "{{ url('lists') }}">Create a new shopping list.</a></td>                    
+                    
+                    
 
+               
+           
 
 
 

@@ -87,3 +87,23 @@ display: inline-block;
 	margin-right: 30px;
 }
 
+.list {
+  white-space: pre-wrap;
+}
+.profile {
+  width: 100%;
+}
+.btn-profile{
+  width: 25%;
+}
+.kv-avatar .file-preview-frame,.kv-avatar .file-preview-frame:hover {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+.kv-avatar .file-input {
+    display: table-cell;
+    max-width: 220px;
+}

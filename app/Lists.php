@@ -9,6 +9,7 @@ class Lists extends Model
    protected $fillable = [
    		'title',
    		'description',
+   		'shoppingDate',
    		
    	];
 }

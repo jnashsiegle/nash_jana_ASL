@@ -14,7 +14,7 @@
                     <!--Display Existing Lists -->
                     @foreach($lists as $list)
                         <h3>{{ $list->title }}</h3>
-                        <p>{{ $list->description}}</p>
+                        
                         <p>
                             <a href="{{ route('lists.show', $list->id) }}" class="btn btn-info">View List</a>
                             <a href="{{ route('lists.edit', $list->id) }}" class="btn btn-primary">Edit List</a>
