@@ -11,11 +11,21 @@
 					<h1>{{$list->title}}</h1>
 					<p class="lead">{{ $list->description }}</p>
 
-					<a href="{{ route('lists.index') }}" class="btn btn-info">Back to all tasks</a>
-<a href="{{ route('lists.edit', $list->id) }}" class="btn btn-primary">Edit List</a>
+					
+					<a href="{{ route('lists.edit', $list->id) }}" class="btn btn-primary pull-left">Edit List</a>
+					<a href="{{ route('lists.index') }}" class="btn btn-info pull-left">Back to all lists</a>
+				
 
-<div class="pull-right">
-    <a href="#" class="btn btn-danger">Delete this list</a>
+				<div class="col-md-2 pull-right">
+			    {!! Form::open(['method' => 'DELETE', 'route' => ['lists.destroy', $list->id]]) !!}
+            	{!! Form::submit('Delete this list?', ['class' => 'btn btn-danger']) !!}
+        		{!! Form::close() !!}
+		 		</div>
+
+			</div>
+			
+		</div>
+	</div>
 </div>
 					
 

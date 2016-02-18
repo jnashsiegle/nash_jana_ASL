@@ -33,7 +33,7 @@
 </body>
 </html>
     <nav class="navbar navbar-default">
-        <div class="container">
+        <div class="container">        
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -83,7 +83,11 @@
             </div>
         </div>
     </nav>
-
+    @if(Session::has('flash_message'))
+            <div class="alert alert-success">
+                {{ Session::get('flash_message') }}
+            </div>
+        @endif
     @yield('content')
 
     <!-- JavaScripts -->

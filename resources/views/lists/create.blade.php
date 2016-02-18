@@ -13,13 +13,7 @@
 					<p class="lead">Add to your shopping list below.</p>
 					<hr>
 					<!--check for errors in our form with the following: -->
-					@if($errors->any())
-					    <div class="alert alert-danger">
-					        @foreach($errors->all() as $error)
-					            <p>{{ $error }}</p>
-					        @endforeach
-					    </div>
-					@endif
+					@include('partials.alerts.errors')
 
 					<!--Success flash message -->
 					@if(Session::has('flash_message'))

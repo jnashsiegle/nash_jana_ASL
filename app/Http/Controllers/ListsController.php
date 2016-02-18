@@ -103,7 +103,9 @@ class ListsController extends Controller
      */
     public function edit($id)
     {
-        return view('lists.edit');
+         $list = Lists::findOrFail($id);
+
+    return view('lists.edit')->withList($list);
     }
 
     /**
@@ -115,8 +117,25 @@ class ListsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $list = Lists::findOrFail($id);
+
+        $this->validate($request, [
+            'title'=> 'required',
+            'description' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        $list->fill($input)->save();
+
+        Session::flash('flash_message', 'List successfully updated!');
+
+        return redirect()->back();
     }
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -126,6 +145,12 @@ class ListsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $list = Lists::findOrFail($id);
+
+        $list->delete();
+
+        Session::flash('flash_message', 'Task successfully deleted!');
+
+        return redirect()->route('lists.index');
     }
 }
