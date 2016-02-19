@@ -34,7 +34,7 @@
 
                         <div class = "form-group">
                         {!! Form::label('shoppingDate', 'Shopping Date:', ['class' => 'control-label']) !!}
-                        {!! Form::text('shoppingDate', '', array('id' => 'datepicker')) !!}
+                        {!! Form::text('shoppingDate', null, array('id' => 'datepicker')) !!}
                     </div>
 
                         <div class="form-group">

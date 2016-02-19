@@ -9,7 +9,7 @@
                 <div class="panel-heading">It's Shopping Day!</div>
                 <div class="panel-body">
 					<h1>{{$list->title}}</h1>
-					<p>{{$list->shopping_date}}</p>
+					<p>Shopping Date: {{$list->shoppingDate}}</p>
 					<p class="lead list">{{ $list->description }}</p>
 
 					

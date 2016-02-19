@@ -37,13 +37,18 @@
 						{!! Form::text('shoppingDate', '', array('id' => 'datepicker')) !!}
 					</div>
 
+					
+
 					<div class="form-group">
 					    {!! Form::label('description', 'Description:', ['class' => 'control-label']) !!}
 					    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 					</div>
 
 					{!! Form::submit('Save List', ['class' => 'btn btn-primary']) !!}
+					<a href="{{ route('lists.index') }}" class="btn btn-info pull-right">Back to all lists</a>
+
 
 					{!! Form::close() !!}
+
 
 @stop

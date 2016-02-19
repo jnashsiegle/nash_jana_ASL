@@ -17,7 +17,7 @@ class CreateListsTable extends Migration
             $table->string('user_id')->nullable();
             $table->string('title');
             $table->longtext('description');
-            $table->date('shoppingDate');
+            $table->string('shoppingDate');
             $table->timestamps();
         });
     }
