@@ -43,11 +43,13 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-sign-in"></i>Login
                                 </button>
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a></div></div>
+                        <div class = "form-group">
+                            <div class = "col-md-6 col-md-offset-4">
                                 <!--facebook login -->
-                                <a class = "redirect" href="redirect">FB Login</a>
+                                <a "class="btn btn-primary" href="redirect"><img src = "img/fblogin.png" alt = "facebook login" ></a></div>
                             </div>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

@@ -11,7 +11,7 @@
     <hr />
                     
                         <h1>Editing {{$list->title}} </h1>
-                        <p class="lead">Edit to save this task below, or <a href = "{{ route('lists.index') }}">go back to all lists.</a> </p>
+                        <p class="lead">Edit to save this list below, or <a href = "{{ route('lists.index') }}">go back to all lists.</a> </p>
                         <hr>
 
                         <!--beginning error check -->

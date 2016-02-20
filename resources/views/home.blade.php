@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<!--Success flash message -->
+                    @if (session('status'))
+   <p class="alert alert-success">{{ session('status') }}</p>
+@endif
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -17,17 +21,8 @@
                     <tr>
                     <td>
                     <p class = "inline">What would you like to do today &quest;</p>
-                    <p><a href = "{{ url('lists') }}">Create a new shopping list.</a></td>                    
-                    
-                    
-
-               
-           
-
-
-
+                    <p><a href = "{{ url('lists') }}">Create a new shopping list.</a></td>  
                     </div>
-
                 </div>
             </div>
         </div>

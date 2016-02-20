@@ -151,7 +151,7 @@ class ListsController extends Controller
 
         $list->delete();
 
-        Session::flash('flash_message', 'Task successfully deleted!');
+        Session::flash('flash_message', 'List successfully deleted!');
 
         return redirect()->route('lists.index');
     }
