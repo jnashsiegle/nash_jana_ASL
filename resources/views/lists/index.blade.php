@@ -12,6 +12,7 @@
 <hr>
                     
                     <!--Display Existing Lists -->
+                    
                     @foreach($lists as $list)
                         <h3>{{ $list->title }}</h3>
                         
