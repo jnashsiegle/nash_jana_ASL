@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Input;
 use App\Lists;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Html;
 use Session;
 use View;
+use Auth;
+
 
 
 class ListsController extends Controller
@@ -27,9 +30,9 @@ class ListsController extends Controller
     PUT /Lists/{id}         Update
     DELETE  /Lists/{id}     Destroy
      */
-    public function index()
+    public function index(Request $request)
     {
-        $lists = Lists::all();
+        $lists = Lists::where('user_id', $request->user()->id)->get();
 
         return view('lists.index')->withLists($lists);
         
@@ -68,10 +71,17 @@ class ListsController extends Controller
             'description' => 'required',
             'shoppingDate' => 'required'
             ]);
+            $request->user()->lists()->create([
+            'name' => $request->name,
+            ]);
+            $input = $request->all();            
+            Lists::create(Input::all());
 
-            $input = $request->all();
+            
 
-            Lists::create($input);
+
+
+
 
             Session::flash('flash_message', 'List successfully added!');
 

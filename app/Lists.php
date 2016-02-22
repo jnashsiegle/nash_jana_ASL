@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Lists extends Model 
@@ -12,6 +13,10 @@ class Lists extends Model
    		'shoppingDate',
    		
    	];
+   	public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
 
 
